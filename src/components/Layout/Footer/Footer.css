@@ -1,0 +1,125 @@
+#footer {
+  background-color: #0a0a0a;
+  padding: 4em 0;
+  color: #c44d4d;
+}
+
+#footer .inner {
+  max-width: 75em;
+  margin: 0 auto;
+  padding: 0 2em;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 4em;
+}
+
+/* Left Column */
+.footer-social {
+  flex: 1;
+}
+
+.logo-large {
+  font-family: 'TR', sans-serif;
+  font-size: 5em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  position: relative;
+  background: linear-gradient(to right, #c44d4d, #f2a3a5, #c44d4d);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: waveGradient 3s linear infinite;
+}
+
+@keyframes waveGradient {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@font-face {
+  font-family: 'TR';
+  src: url('../../../../public/assets/fonts/coluna/Coluna.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.divider {
+  height: 1.5px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 2em 0;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.5em;
+}
+
+.social-icons .icon {
+  font-size: 1.5em;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons .icon i {
+  font-family: 'FontAwesome';
+}
+
+.social-icons .icon:hover {
+  color: #c44d4d;
+}
+
+/* Right Column */
+.footer-forum {
+  flex: 2;
+  display: flex;
+  justify-content: space-around;
+}
+
+.forum-section h3 {
+  color: #e5474b;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.forum-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.forum-section ul li {
+  margin-bottom: 0.5em;
+}
+
+.forum-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forum-section ul li a:hover {
+  color: #e5474b;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-forum {
+    flex-direction: column;
+    align-items: center;
+  }
+}

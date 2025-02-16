@@ -1,0 +1,135 @@
+body {
+  padding-top: 4.5em;
+}
+
+#header {
+  background: #0a0a0a;
+  color: #d5d5d5;
+  cursor: default;
+  height: 5em;
+  left: 0;
+  line-height: 5em;
+  position: fixed;
+  text-align: right;
+  top: 0;
+  width: 100%;
+  z-index: 10001;
+  transition: all 0.3s ease;
+}
+
+#header.scrolled {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#header .inner {
+  max-width: 65em;
+  margin: 0 auto;
+  padding: 0 2em;
+  position: relative;
+}
+
+#header .inner .logo {
+  color: inherit;
+  display: inline-block;
+  font-size: 2.26em;
+  height: inherit;
+  left: 0;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+#header:not(.scrolled) .inner .logo:hover {
+  color: #e5474b !important;
+}
+
+#nav {
+  display: inline-block;
+}
+
+#nav a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.12em;
+  padding: 0 1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+#header:not(.scrolled) #nav a:hover {
+  color: #e5474b !important;
+}
+
+#header.scrolled .inner .logo,
+#header.scrolled #nav a {
+  color: #000000;
+}
+
+#header.scrolled .inner .logo:hover,
+#header.scrolled #nav a:hover {
+  color: #e5474b !important;
+}
+
+.navPanelToggle {
+  display: none;
+  cursor: pointer;
+}
+
+.navPanel {
+  position: fixed;
+  top: 5em;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  z-index: 10000;
+}
+
+@media screen and (max-width: 736px) {
+  body {
+    padding-top: 3em;
+  }
+
+  #header {
+    height: 3em;
+    line-height: 3em;
+  }
+
+  #nav {
+    display: none;
+  }
+
+  #nav.active {
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 3em;
+    background: #0a0a0a;
+    width: 100%;
+    text-align: center;
+    padding: 1em 0;
+  }
+
+  #nav.active a {
+    display: block;
+    padding: 0.5em 0;
+  }
+
+  .navPanelToggle {
+    display: block;
+    position: absolute;
+    right: 2em;
+    top: 0;
+    font-size: 1.25em;
+    color: inherit;
+  }
+}

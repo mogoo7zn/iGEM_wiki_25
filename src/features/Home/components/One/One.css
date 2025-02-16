@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Pacifico');
+/* @import "../../../../styles/animations.css"; */
+
+/* Basic styles from main.css */
+.inner {
+  max-width: 65em;
+  width: calc(100% - 6em);
+  margin: 0 auto;
+}
+
+/* One section specific styles */
+#one {
+  padding: 3em 2em 8em 2em;
+  scroll-margin-top: 5em;
+  font-size: 2.9ex;
+  line-height: 2.6;
+}
+
+#one header h2 {
+  color: #e5474b;
+  font-weight: 700;
+  font-size: 2em;
+  margin-bottom: 0em;
+  text-transform: uppercase;
+}
+
+/* Content layout */
+#one .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+#one .content p {
+  flex: 1;
+  margin: 2em 0 0 0;
+  color: #111111;
+}
+
+#one .content img.responsive-image {
+  flex: 1;
+  max-width: 46%;
+  height: auto;
+  display: block;
+}
+
+/* Animation states */
+#one header h2,
+#one .content {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+#one.active header h2,
+#one.active .content {
+  animation: fadeInLeft 2s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .inner {
+    width: calc(100% - 3em);
+  }
+
+  #one .content {
+    flex-direction: column;
+  }
+
+  #one .content p,
+  #one .content img.responsive-image {
+    max-width: 100%;
+    margin-bottom: 1em;
+  }
+}

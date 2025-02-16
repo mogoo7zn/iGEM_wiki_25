@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.env
+.DS_Store
+*.log
+
+# IDE config
+.vscode/
+.idea/
+
+# coverage
+coverage/
+.eslintcache
+
+# temp dirs
+*.tmp
+*.bak
