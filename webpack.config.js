@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
-    publicPath: process.env.NODE_ENV == 'production' ? './' : '/',    // Warning: 线上发布需要修改
+    publicPath: '/',    // Warning: 线上发布需要修改
     clean: true,
   },
   resolve: {
@@ -77,6 +77,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
+      filename: 'index.html',
+      chunks: ['main']
     }),
     new MiniCssExtractPlugin(),
     new BundleAnalyzerPlugin({
@@ -95,6 +97,12 @@ module.exports = {
     ],
     port: 3000,
     hot: true,
+    historyApiFallback: {
+      rewrites: [
+        { from: /^\/team/, to: '/index.html' },
+        { from: /./, to: '/index.html' }
+      ]
+    },
     proxy: {
       '/api': 'http://localhost:5000',
     },

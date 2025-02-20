@@ -25,7 +25,6 @@ npm install
 
 - 运行 `npm start` 启动开发服务器。
 - 运行 `npm run build` 构建项目。
-- 运行 `npm run preview` 查看构建结果。
 - 运行 `npm analyze` 分析打包结果。
 - 运行 `npm run lint` 运行代码检查。
 - 运行 `npm run format` 格式化代码。

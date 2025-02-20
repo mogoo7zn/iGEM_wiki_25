@@ -27,8 +27,8 @@ const Header = () => {
             TOMB RAIDER
           </Link>
           <nav id="nav" className={isNavOpen ? 'active' : ''}>
-            <Link to="/">TR</Link>
-            <Link to="/forum">Forum</Link>
+            <Link to="/">Home</Link>
+            <Link to="/team">Team</Link>
             <Link to="/settings">Settings</Link>
           </nav>
           <a className="navPanelToggle" onClick={() => setIsNavOpen(!isNavOpen)} aria-label="Menu">

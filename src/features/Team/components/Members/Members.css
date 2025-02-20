@@ -1,0 +1,155 @@
+#team-members h3 {
+  font: 1.8em sans-serif;
+}
+
+.member-card {
+  perspective: 1000px;
+  width: 300px;
+  height: 400px;
+  margin: 1em;
+  cursor: pointer;
+  position: relative;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.card-inner.is-flipped {
+  transform: rotateY(180deg) scale(1.1) !important;
+}
+
+.member-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.member-card:hover .card-front,
+.member-card:hover .card-back {
+  box-shadow: 
+    0 20px 40px -10px rgba(0, 0, 0, 0.4),
+    0 10px 20px -5px rgba(0, 0, 0, 0.3);
+}
+
+.card-front h3,
+.card-front p,
+.card-back .mem_desc {
+  transform: translateZ(30px);
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: #0c0c0c;
+  color: #f2a3a5;
+  padding: 2em;
+  border-radius: 0.25em;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 
+    0 10px 30px -5px rgba(0, 0, 0, 0.3),
+    0 5px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 2em;
+}
+
+.back-header {
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+.back-header h3 {
+  color: #f2a3a5;
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+}
+
+.back-header .role {
+  color: rgba(242, 163, 165, 0.8);
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+.member-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1em;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: translateZ(40px);
+}
+
+#team-members {
+  padding: 6em 0;
+}
+
+#team-members .inner {
+  max-width: 65em;
+  width: calc(100% - 6em);
+  margin: 0 auto;
+}
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* 背板介绍 */
+.card-back .mem_desc {
+  flex-grow: 1;
+  font-size: 1.2em !important;
+  color: #f2a3a5;
+  text-align: center;
+  line-height: 1.5;
+  font-family: 'Lato', sans-serif;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1em;
+  border-radius: 0.5em;
+  margin-top: 1em;
+}
+
+/* 响应式字体大小 */
+@media screen and (max-width: 768px) {
+  .card-back .mem_desc {
+    font-size: 1em !important;
+  }
+}
+
+/* 边框 */
+.member-card::before {
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+  transform: translateZ(1px);
+  transform-style: preserve-3d;
+}
+
+.member-card:hover::before {
+  opacity: 1;
+  box-shadow: 0 0 15px rgba(242, 163, 165, 0.3);
+}
