@@ -1,12 +1,5 @@
-node_modules/
-dist/
 .env
 .DS_Store
-*.log
-
-# IDE config
-.vscode/
-.idea/
 
 # coverage
 coverage/
@@ -15,3 +8,23 @@ coverage/
 # temp dirs
 *.tmp
 *.bak
+
+# Build output
+dist/
+build/
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Cache
+.cache/
+.npm/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*

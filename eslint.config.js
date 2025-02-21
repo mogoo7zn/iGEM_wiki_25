@@ -1,13 +1,13 @@
-import globals from 'globals';
-import js from '@eslint/js';
-import reactPlugin from 'eslint-plugin-react';
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
-import prettier from 'eslint-config-prettier';
+const globals = require('globals');
+const js = require('@eslint/js');
+const reactPlugin = require('eslint-plugin-react');
+const reactHooksPlugin = require('eslint-plugin-react-hooks');
+const prettier = require('eslint-config-prettier');
 
-export default [
+module.exports = [
   js.configs.recommended,
   {
-    files: ['**/*.{js,jsx}'],
+    files: ['**/*.{js,jsx,ts,tsx}'], // 添加 TypeScript 支持
     plugins: {
       react: reactPlugin,
       'react-hooks': reactHooksPlugin,
@@ -17,14 +17,16 @@ export default [
       sourceType: 'module',
       parserOptions: {
         ecmaFeatures: {
-          jsx: true
+          jsx: true,
         }
       },
       globals: {
         ...globals.browser,
         ...globals.node,
         React: true,
-        JSX: true
+        JSX: true,
+        process: true,
+        module: true,
       }
     },
     settings: {
@@ -33,16 +35,28 @@ export default [
       }
     },
     rules: {
+      // React 规则
       'react/jsx-uses-react': 'off',
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'error',
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
-      'no-unused-vars': 'warn',
-      'no-console': ['warn', { allow: ['warn', 'error'] }],
+      
+      // 通用规则
+      'no-unused-vars': ['warn', { 
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_'
+      }],
+      'no-console': ['warn', { 
+        allow: ['warn', 'error', 'info'] 
+      }],
+      
+      // 代码风格
       'quotes': ['error', 'single'],
       'semi': ['error', 'always'],
-      'indent': ['error', 2]
+      'indent': ['error', 2],
+      'comma-dangle': ['error', 'always-multiline'],
+      'object-curly-spacing': ['error', 'always'],
     }
   },
   prettier

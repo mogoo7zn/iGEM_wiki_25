@@ -30,7 +30,7 @@
 
 .member-card:hover .card-front,
 .member-card:hover .card-back {
-  box-shadow: 
+  box-shadow:
     0 20px 40px -10px rgba(0, 0, 0, 0.4),
     0 10px 20px -5px rgba(0, 0, 0, 0.3);
 }
@@ -53,7 +53,7 @@
   padding: 2em;
   border-radius: 0.25em;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: 
+  box-shadow:
     0 10px 30px -5px rgba(0, 0, 0, 0.3),
     0 5px 15px -3px rgba(0, 0, 0, 0.2);
 }

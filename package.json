@@ -32,13 +32,14 @@
     "webpack-dev-server": "^4.15.1"
   },
   "scripts": {
-    "start": "webpack serve --mode development",
-    "build": "webpack --mode production",
-    "analyze": "ANALYZE=true webpack --mode production",
-    "lint": "eslint \"src/**/*.{js,jsx}\"",
+    "start": "webpack serve --mode development --open",
+    "build": "webpack --mode production --progress",
+    "analyze": "cross-env ANALYZE=true webpack --mode production",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --cache --cache-location ./node_modules/.cache/eslint/",
     "lint:fix": "eslint \"src/**/*.{js,jsx}\" --fix",
-    "format": "prettier --write \"src/**/*.{js,jsx,css,md}\"",
-    "test": "jest",
-    "imagemin": "imagemin public/assets/images/* --out-dir=public/assets/images/optimized"
+    "format": "prettier --write \"src/**/*.{js,jsx,css,md}\" --cache",
+    "test": "jest --passWithNoTests",
+    "imagemin": "imagemin public/assets/images/* --out-dir=public/assets/images/optimized",
+    "prepare": "husky install"
   }
 }

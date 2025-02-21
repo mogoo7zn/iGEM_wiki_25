@@ -10,7 +10,7 @@ const MemberCard = ({ id, name, alias, role, image, description }) => {
   const handleMouseMove = (e) => {
     // 如果卡片已翻转，不执行3D倾斜
     if (isFlipped) return;
-    
+
     const card = cardRef.current;
     if (!card) return;
 
@@ -21,8 +21,8 @@ const MemberCard = ({ id, name, alias, role, image, description }) => {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateX = (y - centerY) / centerY * 10;
-    const rotateY = (x - centerX) / centerX * 10;
+    const rotateX = ((y - centerY) / centerY) * 10;
+    const rotateY = ((x - centerX) / centerX) * 10;
 
     setRotation({ x: rotateX, y: rotateY });
   };
@@ -57,24 +57,28 @@ const MemberCard = ({ id, name, alias, role, image, description }) => {
             rotateY(${isFlipped ? 180 : rotation.y}deg)
             translateZ(50px)
             scale(${isFlipped ? 0.95 : 1})
-          `
+          `,
         }}
       >
         <div className="card-front">
-          <img 
-            src={image} 
-            alt={name} 
+          <img
+            src={image}
+            alt={name}
             className="member-image"
             style={{
-              transform: `rotateY(${isFlipped ? 180 : 0}deg)`
+              transform: `rotateY(${isFlipped ? 180 : 0}deg)`,
             }}
           />
-          <h3>{name} {alias}</h3>
+          <h3>
+            {name} {alias}
+          </h3>
           <p>{role}</p>
         </div>
         <div className="card-back">
           <div className="back-header">
-            <h3>{name} {alias}</h3>
+            <h3>
+              {name} {alias}
+            </h3>
             <p className="role">{role}</p>
           </div>
           <p className="mem_desc">{description}</p>
@@ -83,7 +87,6 @@ const MemberCard = ({ id, name, alias, role, image, description }) => {
     </div>
   );
 };
-
 
 const Members = () => {
   const teamMembers = [
@@ -103,16 +106,15 @@ const Members = () => {
       alias: '',
       role: '',
       image: null,
-      description:
-        '',
-    }
+      description: '',
+    },
   ];
 
   return (
     <section id="team-members">
       <div className="inner">
         <div className="members-grid">
-        {/* 遍历展示所有成员 */}
+          {/* 遍历展示所有成员 */}
           {teamMembers.map((member) => (
             <MemberCard key={member.id} {...member} />
           ))}

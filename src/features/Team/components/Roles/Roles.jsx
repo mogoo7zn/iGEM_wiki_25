@@ -17,8 +17,8 @@ const RoleCard = ({ title, description, members }) => {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateX = (y - centerY) / centerY * 25;
-    const rotateY = (x - centerX) / centerX * 25;
+    const rotateX = ((y - centerY) / centerY) * 25;
+    const rotateY = ((x - centerX) / centerX) * 25;
 
     setRotation({ x: rotateX, y: rotateY });
   };
