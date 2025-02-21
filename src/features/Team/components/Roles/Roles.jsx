@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import './Roles.css';
 
 const RoleCard = ({ title, description, members }) => {
@@ -94,3 +94,11 @@ const Roles = () => {
 };
 
 export default Roles;
+
+const PropTypes = require('prop-types');
+
+RoleCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  members: PropTypes.arrayOf(PropTypes.string).isRequired,
+};

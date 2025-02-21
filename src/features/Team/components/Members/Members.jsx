@@ -92,8 +92,8 @@ const Members = () => {
   const teamMembers = [
     {
       id: 0,
-      name: 'Wang ZiNing',
-      alias: '墨谷',
+      name: 'Wang ZiNing',  
+      alias: '墨谷',        // 别名
       role: 'Wiki Lead',
       image: mogooAvatar,
       description:
@@ -125,3 +125,14 @@ const Members = () => {
 };
 
 export default Members;
+
+const PropTypes = require('prop-types');
+
+MemberCard.propTypes = {
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  name: PropTypes.string.isRequired,
+  alias: PropTypes.string,
+  role: PropTypes.string,
+  image: PropTypes.string,
+  description: PropTypes.string,
+};

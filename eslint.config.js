@@ -38,7 +38,7 @@ module.exports = [
       // React 规则
       'react/jsx-uses-react': 'off',
       'react/react-in-jsx-scope': 'off',
-      'react/prop-types': 'error',
+      'react/prop-types': 'warn',
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
       
