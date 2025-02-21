@@ -1,59 +1,71 @@
-import React from 'react';
-import gameImg from '@assets/images/game.jpg';
-import movieImg from '@assets/images/movie.jpg';
+import React, { useState } from 'react';
+import FMT1 from '@assets/images/FMT1.jpg';
+import FMT2 from '@assets/images/FMT2.png';
 import './Two.css';
 
 const Two = () => {
+  // 检测鼠标是否进入了某个 column
+  const [hoveredColumn, setHoveredColumn] = useState(null);
+
+  const handleMouseEnter = (column) => {
+    setHoveredColumn(column);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredColumn(null);
+  };
+
   return (
     <section id="two">
       <div className="inner">
         <div className="columns">
-          <article>
+          <article
+            className={`column ${hoveredColumn === 'left' ? 'hovered' : ''}`}
+            onMouseEnter={() => handleMouseEnter('left')}
+            onMouseLeave={handleMouseLeave}
+          >
             <div className="content">
               <header>
-                <h3>video game</h3>
+                <h3>Impact of Chemotherapy on Gut Microbiota:</h3>
               </header>
               <div className="image fit">
                 <img
-                  src={gameImg}
+                  src={FMT1}
                   loading="lazy"
-                  alt="TR Video Game Image"
+                  alt="FMT Image"
                   className="responsive-image"
                 />
               </div>
               <p>
-                Fecal Microbiota Transplantation (FMT):
-                <br />
-                FMT involves transferring fecal matter from a healthy donor to a patient to restore a balanced gut microbiota. This
-                approach has been explored in cancer management to mitigate chemotherapy-induced dysbiosis and enhance
-                treatment efficacy.
+                Chemotherapy can disrupt the balance of the gut microbiota, leading to dysbiosis, which may contribute to
+                gastrointestinal side effects and influence the overall health of patients. Studies have shown that fecal microbiota
+                transplantation (FMT) can alleviate chemotherapy-induced gut microbiota disturbances, potentially improving
+                patient outcomes.
               </p>
             </div>
           </article>
 
-          <article className="alt">
+          <article
+            className={`column ${hoveredColumn === 'right' ? 'hovered' : ''}`}
+            onMouseEnter={() => handleMouseEnter('right')}
+            onMouseLeave={handleMouseLeave}
+          >
             <div className="content">
               <header>
-                <h3>movie</h3>
+                <h3>Fecal Microbiota Transplantation (FMT):</h3>
               </header>
               <div className="image fit">
                 <img
-                  src={movieImg}
+                  src={FMT2}
                   loading="lazy"
-                  alt="TR Movie Image"
+                  alt="FMT Image"
                   className="responsive-image"
                 />
               </div>
               <p>
-                L-asparaginase is an enzyme used in leukemia treatment to deplete asparagine, an amino acid essential for
-                leukemia cell survival. Escherichia coli (E. coli) is a common source of this enzyme. However, the production cost of
-                L-asparaginase is high, making it an expensive treatment option.
-                <br />
-                <br />
-                High-Yield L-Asparaginase-Producing E. coli:
-                <br />
-                Researchers have identified E. coli strains capable of high-yield production of L-asparaginase. Optimizing the
-                cultivation conditions of these strains can enhance enzyme production, potentially reducing treatment costs.
+                FMT involves transferring fecal matter from a healthy donor to a patient to restore a balanced gut microbiota. This
+                approach has been explored in cancer management to mitigate chemotherapy-induced dysbiosis and enhance
+                treatment efficacy.
               </p>
             </div>
           </article>

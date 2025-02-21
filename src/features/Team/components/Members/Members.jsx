@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import mogooAvatar from '@assets/images/team/ava_mogoo_aniya.jpeg'; // 导入 mogoo 成员头像
 import Sis from '@assets/images/team/Sis.jpg'; // 导入 Sis 成员头像
+import scxAvatar from '@assets/images/team/ava_scx.jpg'; // 导入 scx 成员头像
 import './Members.css';
 
 const MemberCard = ({ id, name, alias, role, image, description }) => {
@@ -100,7 +101,6 @@ const Members = () => {
       description:
         'Responsible for the overall management of the wiki, including web architect, content planning, and team management.',
     },
-    // 添加member信息
     {
       id: 1,
       name: 'Boning Yang',
@@ -109,17 +109,54 @@ const Members = () => {
       image: Sis,
       description: 'Perform content editing and planning coordination for the wiki.',
     },
+    {
+      id: 2,
+      name: 'Shao ChenXuan',
+      alias: '半酸半酯',
+      role: 'Editor',
+      image: scxAvatar,
+      description: 'Responsible for editing the text and images on the Home page.',
+    }
+    
   ];
+
+  const createRows = (members) => {
+    const rows = [];
+    const settings = [
+      { cardsPerRow: 2, justifyContent: 'center' }, // 第一行显示 2 张卡片
+      { cardsPerRow: 1, justifyContent: 'center' }, // 第二行显示 1 张卡片
+    ];
+
+    let currentRow = [];
+    let settingIndex = 0;
+
+    members.forEach((member, index) => {
+      currentRow.push(member);
+      
+      // 当前行卡片数量达到限制或是最后一个成员时创建新行
+      if (currentRow.length === settings[settingIndex]?.cardsPerRow || index === members.length - 1) {
+        rows.push(
+          <div
+            key={settingIndex}
+            className="members-row"
+          >
+            {currentRow.map(member => (
+              <MemberCard key={member.id} {...member} />
+            ))}
+          </div>
+        );
+        currentRow = [];
+        settingIndex++;
+      }
+    });
+
+    return rows;
+  };
 
   return (
     <section id="team-members">
       <div className="inner">
-        <div className="members-grid">
-          {/* 遍历展示所有成员 */}
-          {teamMembers.map((member) => (
-            <MemberCard key={member.id} {...member} />
-          ))}
-        </div>
+        {createRows(teamMembers)}
       </div>
     </section>
   );

@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Pacifico');
+
+.inner {
+    max-width: 65em;
+    width: calc(100% - 6em);
+    margin: 0 auto;
+}
+
+#five {
+    padding: 3em 2em 8em 2em;
+    scroll-margin-top: 5em;
+    font-size: 2.9ex;
+    line-height: 2.6;
+}
+
+#five header h2 {
+    color: #ff8bb7;
+    font-weight: 700;
+    font-size: 2em;
+    margin-bottom: 0em;
+    text-transform: uppercase;
+}
+
+#five .content {
+    display: flex;
+    gap: 2em;
+}
+
+#five .content p {
+    flex: 1;
+}
+
+#five .content img.responsive-image {
+    flex: 1;
+    max-width: 46%;
+    height: auto;
+}
+
+#five ul {
+    align-self: end;
+    list-style: none;
+    padding: 0;
+}
+  
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #ff8bb7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 1rem;
+}
+
+.button:hover{
+    background: #ff5c8d;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transform: translateY(-5px);
+}

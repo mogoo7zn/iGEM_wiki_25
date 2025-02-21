@@ -1,6 +1,7 @@
 import React from 'react';
-import bannerImg from '@assets/images/banner.jpg';
+import bannerImg from '@assets/images/leukemia2.jpg';
 import './Banner.css';
+{/* 因为文档里面只有文字没有图片，所以我就直接在网上找了几张相关的图片（不过我感觉蓝色配粉红色还挺好看的）*/}
 
 const Banner = React.memo(() => {
   return (
@@ -15,11 +16,11 @@ const Banner = React.memo(() => {
       />
       <div className="inner">
         <h1 className="fade-in-left">
-          Fecal Microbiota Transplantation:
+          FMT:
           <span>
-            <br />transferring fecal matter to restore a balanced gut microbiota
+            <br />A way to contribute to the fight against leukemia
             <br />
-            <span className="fade-in-left custom-style">concluded by mogoo7zn and Sisyphus</span>
+            <span className="fade-in-left custom-style">concluded by mogoo7zn</span>
           </span>
         </h1>
         <ul className="actions">

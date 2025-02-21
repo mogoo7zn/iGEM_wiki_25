@@ -1,5 +1,5 @@
 import React from 'react';
-import TRImg from '@assets/images/TR.jpg';
+import TRImg from '@assets/images/L-asparaginase1.jpg';
 import './Three.css';
 
 const Three = () => {
@@ -13,26 +13,20 @@ const Three = () => {
                 src={TRImg}
                 sizes="(max-width: 600px) 300px, (max-width: 1200px) 600px, 1200px"
                 loading="lazy"
-                alt="Tomb Raider"
+                alt="L-asparaginase"
                 className="responsive-image"
                 width={TRImg.width}
                 height={TRImg.height}
               />
             </div>
             <div className="description">
+              <h3>L-Asparaginase in Leukemia Treatment:</h3>
               <p>
-                Integrating engineered E. coli probiotics that produce L-asparaginase into leukemia treatment regimens offers a
-                promising strategy to reduce costs and mitigate chemotherapy-induced gut microbiota disturbances. Further
-                research and clinical trials are necessary to validate the safety and efficacy of this approach.
+                L-asparaginase is an enzyme used in leukemia treatment to deplete asparagine, an amino acid essential for
+                leukemia cell survival. Escherichia coli (E. coli) is a common source of this enzyme. However, the production cost of
+                L-asparaginase is high, making it an expensive treatment option.
               </p>
             </div>
-            <ul className="actions">
-              <li>
-                <a href="#" className="button">
-                  Learn More
-                </a>
-              </li>
-            </ul>
           </article>
           {/* ...remaining articles... */}
         </div>

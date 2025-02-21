@@ -36,7 +36,8 @@ module.exports = [
     },
     rules: {
       // React 规则
-      'react/jsx-uses-react': 'off',
+      'react/jsx-uses-react': 'error',
+      'react/jsx-uses-vars': 'error',
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'warn',
       'react-hooks/rules-of-hooks': 'error',
@@ -45,7 +46,8 @@ module.exports = [
       // 通用规则
       'no-unused-vars': ['warn', { 
         argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_'
+        varsIgnorePattern: '^_',
+        ignoreRestSiblings: true,
       }],
       'no-console': ['warn', { 
         allow: ['warn', 'error', 'info'] 

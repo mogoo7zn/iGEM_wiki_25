@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import Banner from './components/Banner/Banner';
-import One from './components/One/One';
-import Two from './components/Two/Two';
-import Three from './components/Three/Three';
+import { lazy, Suspense } from 'react';
+
+// 使用 lazy 导入优化性能
+const Banner = lazy(() => import('./components/Banner/Banner'));
+const One = lazy(() => import('./components/One/One'));
+const Two = lazy(() => import('./components/Two/Two'));
+const Three = lazy(() => import('./components/Three/Three'));
+const Four = lazy(() => import('./components/Four/Four'));
+const Five = lazy(() => import('./components/Five/Five'));
 
 const Home = () => {
-  // 使用 useEffect 处理组件的动画
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -19,18 +22,23 @@ const Home = () => {
       { threshold: 0.1 }
     );
 
-    // 观察所有需要动画的组件
-    document.querySelectorAll('#one, #two, #three').forEach((el) => observer.observe(el));
+    document.querySelectorAll('#one, #two, #three, #four, #five').forEach(
+      (el) => observer.observe(el)
+    );
 
     return () => observer.disconnect();
   }, []);
 
   return (
     <main>
-      <Banner />
-      <One />
-      <Two />
-      <Three />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Banner />
+        <One />
+        <Two />
+        <Three />
+        <Four />
+        <Five />
+      </Suspense>
     </main>
   );
 };

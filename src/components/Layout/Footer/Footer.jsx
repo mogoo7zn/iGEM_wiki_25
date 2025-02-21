@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="footer-content">
           {/* Left Column - Social */}
           <div className="footer-social">
-            <div className="logo-large">TOMB RAIDER</div>
+            <div className="logo-large">USTC-BIO</div>
             <div className="divider"></div>
             <div className="social-icons">
               <a href="#" className="icon" aria-label="GitHub">

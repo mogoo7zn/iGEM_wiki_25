@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Pacifico');
-/* @import "../../../../styles/animations.css"; */
 
-#three {
+#four {
   opacity: 0;
   transform: translateY(20px);
   transition:
@@ -10,12 +9,12 @@
   padding: 6em 0 4em 0;
 }
 
-#three.active {
+#four.active {
   opacity: 1;
   transform: translateY(0);
 }
 
-#three .inner {
+#four .inner {
   max-width: 65em;
   width: calc(100% - 6em);
   margin: 0 auto;
@@ -26,23 +25,13 @@
   gap: 2rem;
 }
 
+.columns .alt {
+  background: #f9f9f9;
+}
+
 .responsive-image {
   width: 100%;
   height: auto;
-}
-
-#three ul {
-  list-style: none;
-  padding: 0;
-}
-
-.button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background: #ff8bb7;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 0.25rem;
 }
 
 h3 {

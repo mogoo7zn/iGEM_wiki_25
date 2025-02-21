@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Pacifico');
-/* @import "../../../../styles/animations.css"; */
 
 #two {
   opacity: 0;
@@ -21,16 +20,40 @@
   margin: 0 auto;
 }
 
-.columns {
+#two .columns {
   display: flex;
   gap: 2rem;
+  position: relative; /* 添加相对定位 */
 }
 
-.columns .alt {
-  background: #f9f9f9;
+#two .columns::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px; /* 线条宽度 */
+  background-color: #ccc;
+  transform: translateX(-50%);
+}
+
+#two .column {
+  flex: 1; /* 两列水平占比一致 */
+  background: #fff; /* 底色都为白色 */
+  transition: transform 0.7s ease; /* 添加过渡效果 */
+  margin:0 6em 0 6em;
+}
+
+#two .column:hover,
+#two .column.hovered {
+  transform: scale(1.35); /* 鼠标悬浮时放大 */
 }
 
 .responsive-image {
   width: 100%;
   height: auto;
+}
+
+h3 {
+  color: #ff8bb7;
 }

@@ -24,7 +24,7 @@ const Header = () => {
       <header id="header" className={isScrolled ? 'scrolled' : ''}>
         <div className="inner">
           <Link to="/" className="logo">
-            TOMB RAIDER
+            USTC 2025 Wiki
           </Link>
           <nav id="nav" className={isNavOpen ? 'active' : ''}>
             <Link to="/">Home</Link>
