@@ -15,11 +15,11 @@ const Banner = React.memo(() => {
       />
       <div className="inner">
         <h1 className="fade-in-left">
-          TOMB RAIDER:
+          Fecal Microbiota Transplantation:
           <span>
-            <br />a story beyond exile
+            <br />transferring fecal matter to restore a balanced gut microbiota
             <br />
-            <span className="fade-in-left custom-style">concluded by mogoo7zn</span>
+            <span className="fade-in-left custom-style">concluded by mogoo7zn and Sisyphus</span>
           </span>
         </h1>
         <ul className="actions">

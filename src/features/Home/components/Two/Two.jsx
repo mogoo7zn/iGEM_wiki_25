@@ -22,13 +22,11 @@ const Two = () => {
                 />
               </div>
               <p>
-                Tomb Raider is an action-adventure video game franchise that debuted in 1996,
-                created by Core Design and published by Eidos Interactive (later acquired by Square
-                Enix and now owned by Embracer Group). The series follows Lara Croft, a fearless
-                British archaeologist who explores ancient tombs, solves puzzles, and battles
-                enemies while uncovering lost artifacts and hidden secrets.
-                <br /> Tomb Raider remains one of the most influential franchises in gaming history,
-                setting the foundation for modern action-adventure titles.
+                Fecal Microbiota Transplantation (FMT):
+                <br />
+                FMT involves transferring fecal matter from a healthy donor to a patient to restore a balanced gut microbiota. This
+                approach has been explored in cancer management to mitigate chemotherapy-induced dysbiosis and enhance
+                treatment efficacy.
               </p>
             </div>
           </article>
@@ -47,12 +45,15 @@ const Two = () => {
                 />
               </div>
               <p>
-                The Tomb Raider movies are action-adventure films based on the popular Tomb Raider
-                video game series, featuring the iconic archaeologist Lara Croft as she embarks on
-                dangerous expeditions to uncover ancient secrets.
+                L-asparaginase is an enzyme used in leukemia treatment to deplete asparagine, an amino acid essential for
+                leukemia cell survival. Escherichia coli (E. coli) is a common source of this enzyme. However, the production cost of
+                L-asparaginase is high, making it an expensive treatment option.
                 <br />
-                The Tomb Raider films have cemented Lara Croft's status as an iconic
-                action-adventure heroine, bringing the thrill of the games to the big screen.
+                <br />
+                High-Yield L-Asparaginase-Producing E. coli:
+                <br />
+                Researchers have identified E. coli strains capable of high-yield production of L-asparaginase. Optimizing the
+                cultivation conditions of these strains can enhance enzyme production, potentially reducing treatment costs.
               </p>
             </div>
           </article>

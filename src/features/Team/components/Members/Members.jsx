@@ -3,7 +3,7 @@ import mogooAvatar from '@assets/images/team/ava_mogoo_aniya.jpeg'; // 导入 mo
 import Sis from '@assets/images/team/Sis.jpg'; // 导入 Sis 成员头像
 import './Members.css';
 
-const MemberCard = ({ id, name, alias, role, image, description}) => {
+const MemberCard = ({ id, name, alias, role, image, description }) => {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const [isFlipped, setIsFlipped] = useState(false);
   const cardRef = useRef(null);
@@ -93,8 +93,8 @@ const Members = () => {
   const teamMembers = [
     {
       id: 0,
-      name: 'Wang ZiNing',  
-      alias: '墨谷',        // 别名
+      name: 'Wang ZiNing',
+      alias: '墨谷', // 别名
       role: 'Wiki Lead',
       image: mogooAvatar,
       description:
