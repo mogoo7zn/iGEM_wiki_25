@@ -1,8 +1,9 @@
 import React, { useState, useRef } from 'react';
 import mogooAvatar from '@assets/images/team/ava_mogoo_aniya.jpeg'; // 导入 mogoo 成员头像
+import Sis from '@assets/images/team/Sis.jpg'; // 导入 Sis 成员头像
 import './Members.css';
 
-const MemberCard = ({ id, name, alias, role, image, description }) => {
+const MemberCard = ({ id, name, alias, role, image, description}) => {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const [isFlipped, setIsFlipped] = useState(false);
   const cardRef = useRef(null);
@@ -102,11 +103,11 @@ const Members = () => {
     // 添加member信息
     {
       id: 1,
-      name: '',
-      alias: '',
-      role: '',
-      image: null,
-      description: '',
+      name: 'Boning Yang',
+      alias: 'Sisyphus',
+      role: 'Content Manager',
+      image: Sis,
+      description: 'Perform content editing and planning coordination for the wiki.',
     },
   ];
 

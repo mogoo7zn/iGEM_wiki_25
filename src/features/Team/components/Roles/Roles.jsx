@@ -63,14 +63,14 @@ const RoleCard = ({ title, description, members }) => {
 const Roles = () => {
   const roles = [
     {
-      title: 'Wiki',
+      title: 'Wiki Structure',
       description: 'Responsible for overall display and content management',
       members: ['Wang ZiNing'],
     },
     {
-      title: 'Wet Lab',
-      description: 'Handles laboratory experiments and protocols',
-      members: ['Anna'],
+      title: 'Wiki Content',
+      description: 'Perform content editing and planning coordination for the wiki.',
+      members: ['Boning Yang'],
     },
     {
       title: 'Dry Lab',

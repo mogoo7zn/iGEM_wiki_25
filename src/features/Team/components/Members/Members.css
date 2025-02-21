@@ -104,6 +104,10 @@
   max-width: 65em;
   width: calc(100% - 6em);
   margin: 0 auto;
+  /*background-image: url('public/assets/images/team/background.jpg');*/
+  /*background-size: cover;*/
+  /*background-position: center;*/
+  /*background-attachment: fixed;*/
 }
 
 .members-grid {
