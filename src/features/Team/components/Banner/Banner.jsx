@@ -1,9 +1,9 @@
 import React from 'react';
 import './Banner.css';
 
-const Banner = () => {
+const TeamBanner = () => {
   return (
-    <section id="banner">
+    <section id="team-banner" className='banner'>
       <div className="inner">
         <h1>Our Team</h1>
         <p className="description">meet our sci-passionate individuals behind the project</p>
@@ -12,4 +12,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default TeamBanner;

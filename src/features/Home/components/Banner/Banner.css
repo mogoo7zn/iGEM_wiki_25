@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Pacifico');
-/* @import "../../../../styles/animations.css"; */
 
 .fade-in-left {
   animation: fadeInLeft 0.5s ease-in-out;
@@ -16,7 +15,7 @@
   }
 }
 
-#banner {
+.banner#home-banner {
   background-color: #0c0c0c;
   color: #f2a3a5;
   padding: 0;
@@ -40,7 +39,7 @@
   --button-text: #ffffff;
 }
 
-.banner-background {
+#home-banner .banner-background {
   position: absolute;
   top: 0;
   left: 0;
@@ -53,7 +52,7 @@
   z-index: 1;
 }
 
-#banner .inner {
+#home-banner .inner {
   padding: 2em;
   text-align: left;
   position: relative;
@@ -61,7 +60,7 @@
   line-height: 1.5;
 }
 
-#banner h1 {
+#home-banner h1 {
   font-size: 5vw;
   margin: 0 0 1em 0;
   padding: 0;
@@ -70,7 +69,7 @@
   color: #ff8bb7;
 }
 
-#banner h1 span {
+#home-banner h1 span {
   display: block;
   font-size: 2.5vw;
 }
@@ -80,12 +79,12 @@
   color: #ffedfd;
 }
 
-#banner ul {
+#home-banner ul {
   list-style: none;
   padding: 0;
 }
 
-#banner .actions .button {
+#home-banner .actions .button {
   font-size: 2vw;
   background-color: var(--button-bg);
   color: var(--button-text);
@@ -97,12 +96,12 @@
     transform 0.3s ease;
 }
 
-#banner .actions .button:hover {
+#home-banner .actions .button:hover {
   background-color: var(--button-hover-bg);
   animation: zoomIn 0.5s ease-in-out forwards;
 }
 
-#banner .actions .button:active {
+#home-banner .actions .button:active {
   background-color: var(--button-active-bg);
   animation: zoomOut 0.5s ease-in-out forwards;
 }

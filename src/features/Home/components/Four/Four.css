@@ -20,13 +20,41 @@
   margin: 0 auto;
 }
 
-.columns {
+#four .columns {
   display: flex;
   gap: 2rem;
+  position: relative;
 }
 
-.columns .alt {
-  background: #f9f9f9;
+#four .columns:first-child {
+  flex: 4;
+}
+
+#four .columns:last-child {
+  flex: 6;
+}
+
+#four .columns::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 40%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  background-color: #ccc;
+}
+
+#four .column {
+  background: #fff;
+  transition: transform 0.7s ease;
+  margin: 0 6em 0 6em;
+}
+
+#four .column:hover,
+#four .column.hovered {
+  transform: scale(1.35);
 }
 
 .responsive-image {

@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      const bannerElement = document.getElementById('banner');
+
+      const bannerId = location.pathname === '/team' ? 'team-banner' : 'home-banner';
+      const bannerElement = document.getElementById(bannerId);
+
       if (bannerElement) {
         const bannerBottom = bannerElement.getBoundingClientRect().bottom;
         setIsScrolled(bannerBottom < 0);
@@ -17,7 +21,7 @@ const Header = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   return (
     <>
@@ -40,5 +44,6 @@ const Header = () => {
     </>
   );
 };
+
 
 export default Header;
