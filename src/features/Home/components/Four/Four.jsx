@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import leuk3 from '@assets/images/leukemia3.png';
-import leuk4 from '@assets/images/leukemia4.jpg';
+import leuk3 from '@assets/images/fphar-14-1208277-g001.jpg';
+import leuk4 from '@assets/images/41467_2019_13336_Fig1_HTML.png';
 import './Four.css';
 
 const Four = () => {
@@ -34,6 +34,22 @@ const Four = () => {
                 Researchers have identified E. coli strains capable of high-yield production of
                 L-asparaginase. Optimizing the cultivation conditions of these strains can enhance
                 enzyme production, potentially reducing treatment costs.
+              </p>
+              <p>
+                To improve production, several strategies are employed:
+                <ol>
+                  <li>
+                    <strong>Optimizing Cultivation Conditions:</strong>
+                    By adjusting parameters such as temperature, pH, oxygen levels, and nutrient composition, researchers can increase
+                    the efficiency of enzyme production.
+                    For example, reducing the glucose concentration in the growth medium can sometimes enhance enzyme yield.
+                  </li>
+                  <li>
+                    <strong>Genetic Engineering:</strong>
+                    Modifying E. coli to overexpress genes responsible for L-asparaginase production is another approach.
+                    This can involve inserting additional copies of the gene encoding the enzyme or using promoters that enhance gene expression.
+                  </li>
+                </ol>
               </p>
             </div>
           </article>

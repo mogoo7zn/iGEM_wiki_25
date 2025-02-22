@@ -43,6 +43,12 @@
   max-width: 46%;
   height: auto;
   display: block;
+  transition: transform 0.7s ease;
+}
+
+#one .content img.responsive-image:hover,
+#one .content img.responsive-image.hovered {
+  transform: scale(1.3);
 }
 
 /* Animation states */
