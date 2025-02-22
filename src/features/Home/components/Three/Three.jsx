@@ -1,5 +1,5 @@
 import React from 'react';
-import TRImg from '@assets/images/L-asparaginase1.jpg';
+import TRImg from '@assets/images/L-asparaginase1 (1).jpg';
 import './Three.css';
 
 const Three = () => {
