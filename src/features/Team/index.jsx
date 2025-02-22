@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Banner from './components/Banner/Banner';
+import TeamBanner from './components/Banner/Banner';
 import Members from './components/Members/Members';
 import Roles from './components/Roles/Roles';
 
@@ -25,7 +25,7 @@ const Team = () => {
 
   return (
     <main>
-      <Banner />
+      <TeamBanner />
       <Members />
       <Roles />
     </main>

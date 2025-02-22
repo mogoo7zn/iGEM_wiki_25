@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { lazy, Suspense } from 'react';
 
 // 使用 lazy 导入优化性能
-const Banner = lazy(() => import('./components/Banner/Banner'));
+const HomeBanner = lazy(() => import('./components/Banner/Banner'));
 const One = lazy(() => import('./components/One/One'));
 const Two = lazy(() => import('./components/Two/Two'));
 const Three = lazy(() => import('./components/Three/Three'));
@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <main>
       <Suspense fallback={<div>Loading...</div>}>
-        <Banner />
+        <HomeBanner />
         <One />
         <Two />
         <Three />

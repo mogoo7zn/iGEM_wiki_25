@@ -1,11 +1,10 @@
 import React from 'react';
 import bannerImg from '@assets/images/leukemia2.jpg';
 import './Banner.css';
-{/* 因为文档里面只有文字没有图片，所以我就直接在网上找了几张相关的图片（不过我感觉蓝色配粉红色还挺好看的）*/}
 
-const Banner = React.memo(() => {
+const HomeBanner = React.memo(() => {
   return (
-    <section id="banner">
+    <section id="home-banner" className='banner'>
       <div
         className="banner-background"
         style={{
@@ -35,6 +34,6 @@ const Banner = React.memo(() => {
   );
 });
 
-Banner.displayName = 'Banner';
+HomeBanner.displayName = 'HomeBanner';
 
-export default Banner;
+export default HomeBanner;

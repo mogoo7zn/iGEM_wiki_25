@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Pacifico');
 
-#banner {
+.banner#team-banner {
   background-color: #0c0c0c;
   color: #f2a3a5;
   padding: 6em 0;
@@ -16,20 +16,20 @@
   justify-content: center;
 }
 
-#banner .inner {
+#team-banner .inner {
   max-width: 65em;
   width: calc(100% - 6em);
   margin: 0 auto;
 }
 
-#banner h1 {
+#team-banner h1 {
   font-size: 3.5em;
   font-weight: 700;
   margin: 0 0 0.5em 0;
   color: #dfdfdf;
 }
 
-#banner .description {
+#team-banner .description {
   font-size: 1.5em;
   margin: 0;
   color: #bcceca;
