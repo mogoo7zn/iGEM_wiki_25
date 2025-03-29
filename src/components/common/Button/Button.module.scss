@@ -1,0 +1,76 @@
+@use 'sass:color';
+@use '../../../styles/variables' as v;
+@use '../../../styles/_mixins' as mixins;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  // 尺寸
+  &.small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  &.medium {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  &.large {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+  
+  // 变种
+  &.primary {
+    background-color: #e5474b;
+    color: white;
+    
+    &:hover:not(:disabled) {
+      background-color: color.adjust(#e5474b, $lightness: -10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(229, 71, 75, 0.2);
+    }
+    
+    &:active:not(:disabled) {
+      transform: translateY(0);
+    }
+  }
+  
+  &.secondary {
+    background-color: transparent;
+    border: 2px solid #e5474b;
+    color: #e5474b;
+    
+    &:hover:not(:disabled) {
+      background-color: rgba(229, 71, 75, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    &:active:not(:disabled) {
+      transform: translateY(0);
+    }
+  }
+  
+  &.text {
+    background-color: transparent;
+    color: #e5474b;
+    padding: 0.5rem;
+    
+    &:hover:not(:disabled) {
+      text-decoration: underline;
+    }
+  }
+}

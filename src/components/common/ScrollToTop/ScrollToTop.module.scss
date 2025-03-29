@@ -1,0 +1,54 @@
+.scrollToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #e5474b;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    z-index: 999;
+    
+    &:hover {
+      opacity: 1;
+      transform: translateY(-5px);
+    }
+    
+    &:active {
+      transform: translateY(-2px);
+    }
+    
+    .arrow {
+      display: block;
+      line-height: 1;
+      font-weight: bold;
+      transition: transform 0.2s ease;
+    }
+    
+    &:hover .arrow {
+      transform: translateY(-2px);
+    }
+    
+    // 暗色模式支持
+    :global([data-theme='dark']) & {
+      background-color: #f2a3a5;
+      color: #121212;
+    }
+    
+    @media (max-width: 768px) {
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      font-size: 1.25rem;
+    }
+  }

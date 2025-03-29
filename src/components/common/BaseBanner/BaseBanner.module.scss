@@ -1,0 +1,23 @@
+.baseBanner {
+    position: relative;
+    padding-top: var(--current-header-height, 70px); // 设置默认值防止闪烁
+    min-height: calc(100vh - var(--current-header-height, 70px));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+    transition: padding-top 0.3s ease; // 添加过渡动画
+  }
+  
+  .inner {
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem;
+    margin: 0 auto;
+    text-align: center;
+    
+    @media (max-width: 768px) {
+      padding: 1.5rem;
+    }
+  }

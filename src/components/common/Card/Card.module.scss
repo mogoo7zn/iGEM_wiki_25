@@ -1,0 +1,58 @@
+@use '../../../styles/variables' as v;
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  
+  &.elevated {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  &.interactive {
+    cursor: pointer;
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+    
+    &:active {
+      transform: translateY(-2px);
+    }
+    
+    &:focus {
+      outline: 2px solid #e5474b;
+      outline-offset: 2px;
+    }
+  }
+  
+  .title {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .content {
+    line-height: 1.6;
+  }
+}
+
+// 通过CSS变量支持主题
+:global([data-theme='dark']) {
+  .card {
+    background-color: #202020;
+    color: #f0f0f0;
+    
+    &.elevated {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    
+    .title {
+      color: #f0f0f0;
+    }
+  }
+}

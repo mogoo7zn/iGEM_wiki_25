@@ -1,0 +1,36 @@
+:root {
+  --header-height-desktop: 70px;
+  --header-height-mobile: 60px;
+  --content-padding: 6em;
+  --content-padding-mobile: 3em;
+  --current-header-height: 70px;
+    
+  /* 主题色变量 */
+  --primary-color: #e5474b;
+  --primary-color-rgb: 229, 71, 75; // 添加RGB格式变量
+  --secondary-color: #1f2937;
+  --text-color: #333333;
+  --text-secondary: #666666; // 添加次要文本颜色
+  --accent-color: #e5474b;
+  --bg-color: #ffffff;
+  --secondary-bg: #f9f9f9;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  
+  /* 字体样式 */
+  --font-main: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-accent: 'Pacifico', cursive;
+}
+  
+  [data-theme='dark'] {
+    --primary-color: #f2a3a5;
+    --primary-color-rgb: 242, 163, 165; // 添加RGB格式变量
+    --secondary-color: #d4d4d4;
+    --text-color: #f0f0f0;
+    --text-secondary: #a0a0a0; // 添加次要文本颜色
+    --accent-color: #f2a3a5;
+    --bg-color: #121212;
+    --secondary-bg: #1a1a1a;
+    --card-bg: #202020;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+  }

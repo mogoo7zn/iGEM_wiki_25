@@ -1,0 +1,40 @@
+@use '../../styles/variables';
+@use '../../styles/_mixins';
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+  padding-top: var(--current-header-height, 70px); // 确保无未定义变量
+}
+
+// 全局共享的布局组件
+.section {
+  padding: 6em 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+// 响应式调整
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 4em 0;
+  }
+  
+  .main {
+    padding-top: var(--current-header-height, 60px);
+  }
+}

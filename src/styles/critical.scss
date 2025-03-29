@@ -1,0 +1,25 @@
+// Include only the most critical styles needed for initial render
+.banner {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .bannerContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .textContent {
+    flex: 1;
+    z-index: 2;
+  }
+  
+  .h1 {
+    color: white;
+    font-size: 3em;
+    margin-bottom: 0.2em;
+  }

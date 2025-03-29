@@ -1,0 +1,40 @@
+.banner {
+  padding-top: var(--current-header-height, 6em);
+  min-height: calc(100vh - var(--current-header-height, 6em));
+  background-color: #e5474b;
+  color: #ffffff;
+  text-align: center;
+  transition: padding-top 0.3s ease, min-height 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.inner {
+  max-width: 65em;
+  width: calc(100% - 6em);
+  margin: 0 auto;
+}
+
+.banner h1 {
+  font-size: 3.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.2em;
+}
+
+.description {
+  font-size: 1.5em;
+  opacity: 0.8;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 736px) {
+  .inner {
+    width: calc(100% - 4em);
+  }
+
+  .banner h1 {
+    font-size: 1.75em;
+  }
+}

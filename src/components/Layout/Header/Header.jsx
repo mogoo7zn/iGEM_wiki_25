@@ -1,49 +1,117 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import './Header.css';
+import React, { useEffect, useState } from 'react';
+import { useTheme } from '../../../context/ThemeContext';
+import styles from './Header.module.scss';
+import Link from 'next/link';
 
 const Header = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
+  const [isOverBanner, setIsOverBanner] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
+      // 判断是否滚动超过了基本阈值
+      setIsScrolled(window.scrollY > 20);
 
-      const bannerId = location.pathname === '/team' ? 'team-banner' : 'home-banner';
-      const bannerElement = document.getElementById(bannerId);
-
-      if (bannerElement) {
-        const bannerBottom = bannerElement.getBoundingClientRect().bottom;
-        setIsScrolled(bannerBottom < 0);
+      // 判断是否超过了Banner区域
+      const banner = document.getElementById('banner');
+      if (banner) {
+        const bannerHeight = banner.offsetHeight;
+        setIsOverBanner(window.scrollY < bannerHeight * 0.7);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // 初始检查
+    handleScroll();
+
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [location.pathname]);
+  }, []);
+
+  // 当菜单打开时，禁止body滚动以防止背景内容滚动
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [menuOpen]);
+
+  // 监听窗口尺寸变化，在桌面尺寸时自动关闭移动菜单
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768 && menuOpen) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [menuOpen]);
 
   return (
-    <>
-      <header id="header" className={isScrolled ? 'scrolled' : ''}>
-        <div className="inner">
-          <Link to="/" className="logo">
-            USTC 2025 Wiki
-          </Link>
-          <nav id="nav" className={isNavOpen ? 'active' : ''}>
-            <Link to="/">Home</Link>
-            <Link to="/team">Team</Link>
-            <Link to="/settings">Settings</Link>
-          </nav>
-          <a className="navPanelToggle" onClick={() => setIsNavOpen(!isNavOpen)} aria-label="Menu">
-            <span className="fa fa-bars"></span>
-          </a>
+    <header
+      className={`
+      ${styles.header} 
+      ${isScrolled ? styles.scrolled : ''}
+      ${isOverBanner ? styles.transparent : ''}
+    `}
+    >
+      <div className={styles.container}>
+        <div className={styles.logo}>
+          <Link href="/">iGEM Team 2025</Link>
         </div>
-      </header>
-      {isNavOpen && <div className="navPanel" onClick={() => setIsNavOpen(false)} />}
-    </>
+
+        <button
+          className={`${styles.mobileMenuToggle} ${menuOpen ? styles.active : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-expanded={menuOpen}
+          aria-label="Toggle navigation menu"
+        >
+          <span className={styles.icon}></span>
+        </button>
+
+        <nav className={`${styles.nav} ${menuOpen ? styles.open : ''}`}>
+          <ul className={styles.navList}>
+            <li>
+              <Link href="/" onClick={() => setMenuOpen(false)}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/team" onClick={() => setMenuOpen(false)}>
+                Team
+              </Link>
+            </li>
+            <li>
+              <Link href="/project" onClick={() => setMenuOpen(false)}>
+                Project
+              </Link>
+            </li>
+            <li>
+              <Link href="/results" onClick={() => setMenuOpen(false)}>
+                Results
+              </Link>
+            </li>
+          </ul>
+
+          <button
+            className={styles.themeToggle}
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+          >
+            {theme === 'light' ? '🌙' : '☀️'}
+          </button>
+        </nav>
+      </div>
+    </header>
   );
 };
-
 
 export default Header;

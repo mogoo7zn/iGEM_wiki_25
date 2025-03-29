@@ -1,7 +1,8 @@
 @font-face {
   font-family: 'tiktok';
-  src:  url('fonts/tiktok.eot?wgn495');
-  src:  url('fonts/tiktok.eot?wgn495#iefix') format('embedded-opentype'),
+  src: url('fonts/tiktok.eot?wgn495');
+  src:
+    url('fonts/tiktok.eot?wgn495#iefix') format('embedded-opentype'),
     url('fonts/tiktok.ttf?wgn495') format('truetype'),
     url('fonts/tiktok.woff?wgn495') format('woff'),
     url('fonts/tiktok.svg?wgn495#tiktok') format('svg');
@@ -26,5 +27,5 @@
 }
 
 .icon-tiktok:before {
-  content: "\e001";
+  content: '\e001';
 }

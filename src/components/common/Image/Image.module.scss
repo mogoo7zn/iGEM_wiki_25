@@ -1,0 +1,14 @@
+.image {
+    display: block;
+    max-width: 100%;
+    
+    &.loading {
+      filter: blur(10px);
+      transition: filter 0.3s ease;
+    }
+    
+    &.loaded {
+      filter: blur(0);
+      transition: filter 0.5s ease;
+    }
+  }

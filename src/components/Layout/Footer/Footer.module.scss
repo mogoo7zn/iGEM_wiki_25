@@ -1,0 +1,150 @@
+@use '../../../styles/variables';
+@use '../../../styles/_mixins';
+
+.footer {
+  background-color: #0c0c0c;
+  color: #f0f0f0;
+  padding: 4rem 0 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.branding {
+  h3 {
+    color: #e5474b;
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .logo {
+    font-family: var(--font-accent);
+    position: relative;
+    display: inline-block;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #e5474b, #f2a3a5, #e5474b);
+      background-size: 200% 100%;
+      animation: gradientWave 2s ease-in-out infinite;
+    }
+  }
+  
+  p {
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+@keyframes gradientWave {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.links {
+  h4 {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+    color: #e5474b;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      margin-bottom: 0.5rem;
+      
+      a {
+        color: #f0f0f0;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        
+        &:hover {
+          color: #f2a3a5;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.contact {
+  h4 {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+    color: #e5474b;
+  }
+  
+  p {
+    margin: 0 0 1rem;
+  }
+}
+
+.social {
+  display: flex;
+  gap: 1rem;
+  
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #333;
+    color: #f0f0f0;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background-color: #e5474b;
+      transform: translateY(-3px);
+    }
+  }
+}
+
+.bottom {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #999;
+  }
+}
